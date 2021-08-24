@@ -1,0 +1,26 @@
+{
+  "name": "pharmacy",
+  "version": "1.0.0",
+  "description": "Đây là dự án thuốc online",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lehuylxag1995/pharmacy.git"
+  },
+  "keywords": [
+    "pharmacy",
+    "lehuy"
+  ],
+  "author": "Lê Huy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lehuylxag1995/pharmacy/issues"
+  },
+  "homepage": "https://github.com/lehuylxag1995/pharmacy#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
