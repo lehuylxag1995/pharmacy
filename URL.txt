@@ -1,0 +1,26 @@
+==================================Authentication
+
+http://localhost:3000/login
+
+http://localhost:3000/logout
+
+==================================Admin
+
+http://localhost:3000/admin
+
+==================================USER
+Home:
+http://localhost:3000/
+
+List product
+http://localhost:3000/product/
+
+Detail product
+http://localhost:3000/product/:slug(tên sản phẩm)
+
+Category
+http://localhost:3000/category/:slug(tên danh mục)
+
+Cart:
+http://localhost:3000/cart
+

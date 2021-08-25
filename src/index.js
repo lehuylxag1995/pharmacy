@@ -12,15 +12,17 @@ app.use(express.static(path.join(__dirname, './public')))
 //config template engines
 var hbs = exphbs.create({
   /* config */
-  helpers: {
-    foo: function () { return 'FOO!'; },
-  },
   extname: '.hbs',
-
+  layoutsDir:path.join(__dirname, './views/layouts'),
+  partialsDir:[
+    path.join(__dirname, './views/partials/client'),
+    path.join(__dirname, './views/partials/server')
+  ],
 });
-app.set('views', path.join(__dirname, './views/'));
+app.set('views', path.join(__dirname, './views/pages'));
 app.engine('.hbs', hbs.engine);
 app.set('view engine', '.hbs');
+
 
 //Config Router
 RouterConfig(app)
