@@ -3,6 +3,11 @@ const router= express.Router()
 
 const Authentication=require('../controllers/AuthenController')
 
-router.get('/',Authentication.viewLogin)
+// http://localhost:3000/account
+
+router.get('/login',Authentication.viewLogin)
+router.get('/register',Authentication.viewRegister)
+router.post('/login',Authentication.checkLogin)
+router.post('/register',Authentication.checkRegister)
 
 module.exports = router

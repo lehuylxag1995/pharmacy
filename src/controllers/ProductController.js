@@ -3,7 +3,7 @@ class ProductController {
 
     async getListProducts(req, res, next) {
         try {
-            res.json('xin chào 1')
+            res.json('Danh sách sản phẩm')
         } catch (error) {
             throw new Error(error.message)
         }

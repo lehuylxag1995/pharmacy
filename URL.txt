@@ -1,12 +1,12 @@
 ==================================Authentication
 
-http://localhost:3000/login
-
-http://localhost:3000/logout
+http://localhost:3000/account/login
+http://localhost:3000/account/register
+http://localhost:3000/account/logout
 
 ==================================Admin
 
-http://localhost:3000/admin
+http://localhost:3000/admin or admin/dashboard
 
 ==================================USER
 Home:

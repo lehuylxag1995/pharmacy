@@ -6,7 +6,7 @@ const authenRouter=require('./authentication')
 function RouterConfig(app) {
 
     //Authentication
-    app.use('/login',authenRouter)
+    app.use('/account',authenRouter)
 
     // Server
     app.use('/admin', adminRouter)
@@ -14,6 +14,7 @@ function RouterConfig(app) {
     // Client
     app.use('/product', productRouter)
     app.use('/', homeRouter)
+    
 }
 
 module.exports = RouterConfig
