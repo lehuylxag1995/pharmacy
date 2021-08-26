@@ -3,7 +3,6 @@ const adminRouter = require('./admin')
 const authenRouter = require('./authentication')
 
 function RouterConfig(app) {
-
     //Authentication
     app.use('/account', authenRouter)
 

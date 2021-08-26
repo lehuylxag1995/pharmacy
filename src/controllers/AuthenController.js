@@ -2,13 +2,12 @@ const passport = require('passport')
 const UserModel = require('../models/UserModel')
 
 class AuthenController {
-
     viewLogin(req, res, next) {
         res.render('authen/login', { layout: false })
     }
 
     checkLogin(req, res, next) {
-        if (req.body.username == "admin" && req.body.password == "admin") {
+        if (req.body.username == 'admin' && req.body.password == 'admin') {
             res.redirect('/admin')
         }
     }
@@ -34,16 +33,15 @@ class AuthenController {
     checkRegister(req, res, next) {
         let Users = new UserModel({
             email: req.body.email,
-            username: req.body.fullname
-        });
+            username: req.body.fullname,
+        })
 
         UserModel.register(Users, req.body.password, function (err, user) {
             if (err)
-                res.json({ success: false, message: "đăng ký thất bại", err })
-            else
-                res.json({ success: true, message: "đăng ký thành công" })
-        });
+                res.json({ success: false, message: 'đăng ký thất bại', err })
+            else res.json({ success: true, message: 'đăng ký thành công' })
+        })
     }
 }
 
-module.exports = new AuthenController();
+module.exports = new AuthenController()

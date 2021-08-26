@@ -1,36 +1,38 @@
 {
-  "name": "pharmacy",
-  "version": "1.0.0",
-  "description": "Đây là dự án thuốc online",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon --inspect src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lehuylxag1995/pharmacy.git"
-  },
-  "keywords": [
-    "pharmacy",
-    "lehuy"
-  ],
-  "author": "Lê Huy",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lehuylxag1995/pharmacy/issues"
-  },
-  "homepage": "https://github.com/lehuylxag1995/pharmacy#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "express-handlebars": "^5.3.3",
-    "express-session": "^1.17.2",
-    "mongoose": "^6.0.0",
-    "passport": "^0.4.1",
-    "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^6.1.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.12"
-  }
+    "name": "pharmacy",
+    "version": "1.0.0",
+    "description": "Đây là dự án thuốc online",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon --inspect src/index.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepare": "husky install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lehuylxag1995/pharmacy.git"
+    },
+    "keywords": [
+        "pharmacy",
+        "lehuy"
+    ],
+    "author": "Lê Huy",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/lehuylxag1995/pharmacy/issues"
+    },
+    "homepage": "https://github.com/lehuylxag1995/pharmacy#readme",
+    "dependencies": {
+        "express": "^4.17.1",
+        "express-handlebars": "^5.3.3",
+        "express-session": "^1.17.2",
+        "mongoose": "^6.0.0",
+        "passport": "^0.4.1",
+        "passport-local": "^1.0.0",
+        "passport-local-mongoose": "^6.1.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.12",
+        "prettier": "2.3.2"
+    }
 }

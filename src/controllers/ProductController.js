@@ -1,6 +1,4 @@
-
 class ProductController {
-
     async getListProducts(req, res, next) {
         try {
             res.json('Danh sách sản phẩm')
@@ -10,4 +8,4 @@ class ProductController {
     }
 }
 
-module.exports = new ProductController();
+module.exports = new ProductController()
