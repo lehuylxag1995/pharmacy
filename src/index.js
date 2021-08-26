@@ -30,11 +30,8 @@ var hbs = exphbs.create({
   /* config */
   extname: '.hbs',
   layoutsDir: path.join(__dirname, './views/layouts'),
-  // partialsDir: [
-  //   path.join(__dirname, './views/partials/client'),
-  //   path.join(__dirname, './views/partials/server')
-  // ],
   partialsDir: path.join(__dirname, './views/partials'),
+  defaultLayout: false,
 });
 app.set('views', path.join(__dirname, './views/pages'));
 app.engine('.hbs', hbs.engine);

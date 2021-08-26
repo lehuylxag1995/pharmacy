@@ -1,20 +1,17 @@
-const homeRouter = require('./home')
-const productRouter = require('./product')
+const userRouter = require('./user')
 const adminRouter = require('./admin')
-const authenRouter=require('./authentication')
+const authenRouter = require('./authentication')
 
 function RouterConfig(app) {
 
     //Authentication
-    app.use('/account',authenRouter)
+    app.use('/account', authenRouter)
 
     // Server
     app.use('/admin', adminRouter)
 
     // Client
-    app.use('/product', productRouter)
-    app.use('/', homeRouter)
-    
+    app.use('/', userRouter)
 }
 
 module.exports = RouterConfig

@@ -7,10 +7,15 @@ http://localhost:3000/account/logout
 ==================================Admin
 
 http://localhost:3000/admin or admin/dashboard
+http://localhost:3000/admin/about
+
 
 ==================================USER
 Home:
-http://localhost:3000/
+http://localhost:3000/ or/home
+http://localhost:3000/about
+http://localhost:3000/shop
+http://localhost:3000/contact
 
 List product
 http://localhost:3000/product/
