@@ -1,13 +1,14 @@
 const express = require('express')
 const router = express.Router()
 
-const DashboardController = require('../controllers/DashboardController')
+const AdminController = require('../controllers/AdminController')
 
 router.all('/*', function (req, res, next) {
     req.app.locals.layout = 'server'
     next()
 })
 
-router.get('/', DashboardController.index)
+router.get('/', AdminController.index)
+router.get('/about', AdminController.listAbout)
 
 module.exports = router
