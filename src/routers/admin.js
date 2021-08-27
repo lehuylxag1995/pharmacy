@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const AdminController = require('../controllers/AdminController')
+const AboutController = require('../controllers/AboutController')
 
 router.all('/*', function (req, res, next) {
     req.app.locals.layout = 'server'
@@ -9,6 +10,6 @@ router.all('/*', function (req, res, next) {
 })
 
 router.get('/', AdminController.index)
-router.get('/about', AdminController.listAbout)
-
+router.get('/about', AboutController.listAbout)
+router.get('/about/add', AboutController.viewAddAbout)
 module.exports = router

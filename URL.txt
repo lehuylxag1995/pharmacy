@@ -8,12 +8,19 @@ http://localhost:3000/account/logout
 
 http://localhost:3000/admin or admin/dashboard
 http://localhost:3000/admin/about
+http://localhost:3000/admin/about/add
+http://localhost:3000/admin/about/:id/store
 
 
 ==================================USER
 Home:
 http://localhost:3000/ or/home
+
+
 http://localhost:3000/about
+
+
+
 http://localhost:3000/shop
 http://localhost:3000/contact
 

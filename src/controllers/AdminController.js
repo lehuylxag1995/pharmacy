@@ -1,13 +1,8 @@
 class AdminController {
+    //GET http://localhost:3000/admin
     index(req, res) {
-        res.render('server/home', {
+        res.render('server/dashboard', {
             classActiveHome: req.url == '/' ? 'active' : '',
-        })
-    }
-
-    listAbout(req, res, next) {
-        res.render('server/about', {
-            classActiveAbout: req.url == '/about' ? 'active' : '',
         })
     }
 }
