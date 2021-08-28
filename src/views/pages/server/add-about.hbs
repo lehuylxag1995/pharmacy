@@ -2,49 +2,34 @@
 
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
-            <form class="row g-3">
+            <form action="" method="post" class="row g-3">
                 <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4">
-                </div>
-                <div class="col-12">
-                    <label for="inputAddress" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
-                <div class="col-12">
-                    <label for="inputAddress2" class="form-label">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2"
-                        placeholder="Apartment, studio, or floor">
+                    <label for="name" class="form-label">Tên giới thiệu</label>
+                    <input name="name" type="text" class="form-control" placeholder="Nhập tên tiêu đề bài giới thiệu"
+                        class="form-control" id="name">
                 </div>
                 <div class="col-md-6">
-                    <label for="inputCity" class="form-label">City</label>
-                    <input type="text" class="form-control" id="inputCity">
-                </div>
-                <div class="col-md-4">
-                    <label for="inputState" class="form-label">State</label>
-                    <select id="inputState" class="form-select">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <label for="inputZip" class="form-label">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
+                    <label for="ImageFile" class="form-label">Hình ảnh giới thiệu</label>
+                    <input name="image" class="form-control" type="file" id="ImageFile">
                 </div>
                 <div class="col-12">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            Check me out
-                        </label>
-                    </div>
+                    <label for="sloganAbout">Câu phương châm trang giới thiệu</label>
+                    <textarea name="sloganAbout" class="form-control" placeholder="Slogan About" id="sloganAbout"
+                        style="height: 100px"></textarea>
                 </div>
                 <div class="col-12">
-                    <button type="submit" class="btn app-btn-primary">Sign in</button>
+                    <label for="sloganService">Câu phương châm của dịch vụ</label>
+                    <textarea name="sloganService" class="form-control" placeholder="Slogan Service" id="sloganService"
+                        style="height: 100px"></textarea>
+                </div>
+                <div class="col-12">
+                    <label for="sloganBrand">Câu phương châm về các thương hiệu</label>
+                    <textarea name="sloganBrand" class="form-control" placeholder="Slogan Brands" id="sloganBrand"
+                        style="height: 100px"></textarea>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn app-btn-primary">Thêm</button>
+                    <a href="/admin/about" class="btn app-btn-primary">Quay lại</a>
                 </div>
             </form>
 

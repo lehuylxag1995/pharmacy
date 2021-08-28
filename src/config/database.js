@@ -4,10 +4,11 @@ async function connectDatabase() {
         await mongoose.connect('mongodb://localhost:27017/pharmacy', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
+            serverSelectionTimeoutMS: 5000,
         })
         console.log('Database Connected!')
     } catch (error) {
-        throw new Error(error.message)
+        console.error(error.reason)
     }
 }
 module.exports = connectDatabase

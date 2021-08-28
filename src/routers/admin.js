@@ -12,4 +12,6 @@ router.all('/*', function (req, res, next) {
 router.get('/', AdminController.index)
 router.get('/about', AboutController.listAbout)
 router.get('/about/add', AboutController.viewAddAbout)
+router.post('/about/add', AboutController.store)
+
 module.exports = router

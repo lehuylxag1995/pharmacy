@@ -1,11 +1,13 @@
 const express = require('express')
+const cookieParser = require('cookie-parser')
 const exphbs = require('express-handlebars')
 const path = require('path')
 const RouterConfig = require('./routers/index')
 const connectMongoDB = require('./config/database')
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
-const expressSession = require('express-session')
+const session = require('express-session')
+const flash = require('connect-flash')
 const configPassport = require('./middlewares/authentication')
 
 const app = express()
@@ -15,6 +17,16 @@ const port = 3000
 app.use(express.static(path.join(__dirname, './public')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(cookieParser('keyboard cat'))
+app.use(
+    session({
+        resave: false,
+        saveUninitialized: true,
+        secret: 'keyboard cat',
+        cookie: { secure: true, maxAge: 60000 },
+    })
+)
+app.use(flash())
 
 //Authentication passport
 app.use(passport.initialize())
