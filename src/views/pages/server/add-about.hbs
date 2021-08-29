@@ -1,8 +1,18 @@
 <div class="app-wrapper">
 
+
     <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
-            <form action="" method="post" class="row g-3">
+
+            {{#if messageStatus}}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{messageStatus}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {{/if}}
+
+            {{!-- form --}}
+            <form action="/admin/about/store" method="post" class="row g-3">
                 <div class="col-md-6">
                     <label for="name" class="form-label">Tên giới thiệu</label>
                     <input name="name" type="text" class="form-control" placeholder="Nhập tên tiêu đề bài giới thiệu"

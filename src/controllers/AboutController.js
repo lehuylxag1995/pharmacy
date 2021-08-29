@@ -10,6 +10,7 @@ class AboutController {
     listAbout(req, res, next) {
         res.render('server/list-about', {
             classActiveAbout: req.path == '/about' ? 'active' : '',
+            message: req.flash('success'),
         })
     }
 
@@ -17,6 +18,7 @@ class AboutController {
     viewAddAbout(req, res, next) {
         res.render('server/add-about', {
             classActiveAbout: req.path == '/about/add' ? 'active' : '',
+            messageStatus: req.flash('storeError'),
         })
     }
 
@@ -24,10 +26,12 @@ class AboutController {
     store(req, res, next) {
         AboutModel.create(req.body)
             .then((about) => {
+                req.flash('success', 'Thêm bản ghi mới thành công')
                 res.redirect('/admin/about')
             })
             .catch((err) => {
-                res.json({ status: 'error', message: err })
+                req.flash('storeError', err.message)
+                res.redirect('back')
             })
     }
 }
