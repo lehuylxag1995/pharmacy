@@ -11,8 +11,10 @@
             </div>
             {{/if}}
 
+
+
             {{!-- form --}}
-            <form action="/admin/about/store" method="post" class="row g-3">
+            <form action="/admin/about/store" method="post" enctype="multipart/form-data" class="row g-3">
                 <div class="col-md-6">
                     <label for="name" class="form-label">Tên giới thiệu</label>
                     <input name="name" type="text" class="form-control" placeholder="Nhập tên tiêu đề bài giới thiệu"

@@ -4,7 +4,9 @@ const router = express.Router()
 const AdminController = require('../controllers/AdminController')
 const AboutController = require('../controllers/AboutController')
 
+//middleware for router
 router.all('/*', function (req, res, next) {
+    //Set layout for template
     req.app.locals.layout = 'server'
     next()
 })

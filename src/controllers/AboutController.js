@@ -1,4 +1,5 @@
 const AboutModel = require('../models/AboutModel')
+const uploadFile = require('../middlewares/upload')
 
 class AboutController {
     //GET http://localhost:3000/about
@@ -7,10 +8,15 @@ class AboutController {
     }
 
     //GET http://localhost:3000/admin/about
-    listAbout(req, res, next) {
+    async listAbout(req, res, next) {
+        let listAbout = await AboutModel.find({}).lean()
+        listAbout.map((about) => {
+            about.image = `/client/assets/img/${about.image}`
+        })
         res.render('server/list-about', {
+            listAbout,
             classActiveAbout: req.path == '/about' ? 'active' : '',
-            message: req.flash('success'),
+            messageStatus: req.flash('success'),
         })
     }
 
@@ -24,13 +30,23 @@ class AboutController {
 
     //POST http://localhost:3000/admin/about/store
     store(req, res, next) {
-        AboutModel.create(req.body)
-            .then((about) => {
-                req.flash('success', 'Thêm bản ghi mới thành công')
-                res.redirect('/admin/about')
+        uploadFile(req, res)
+            .then(() => {
+                req.body.image = req.file.filename
             })
-            .catch((err) => {
-                req.flash('storeError', err.message)
+            .then(() => {
+                AboutModel.create(req.body)
+                    .then(() => {
+                        req.flash('success', 'Thêm bản ghi mới thành công')
+                        res.redirect('/admin/about')
+                    })
+                    .catch((err) => {
+                        req.flash('storeError', err.message)
+                        res.redirect('back')
+                    })
+            })
+            .catch((error) => {
+                req.flash('storeError', error)
                 res.redirect('back')
             })
     }

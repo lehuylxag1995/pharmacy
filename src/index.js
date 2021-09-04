@@ -8,6 +8,8 @@ const LocalStrategy = require('passport-local').Strategy
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
 const flash = require('connect-flash')
+
+//Call middleware
 const configPassport = require('./middlewares/authentication')
 
 const app = express()
